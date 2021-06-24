@@ -1,0 +1,36 @@
+@import '../../Theme/_variables';
+
+.container {
+  margin-bottom: 15px;
+}
+
+.lable {
+  color: $text;
+  margin-bottom: 10px;
+}
+
+.errorMessage {
+  color: $danger;
+  margin-top: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 20px;
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 7px;
+  min-height: 50px;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+}
+
+.hasError,
+.hasError:focus {
+  border-color: $danger;
+}

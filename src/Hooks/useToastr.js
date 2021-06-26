@@ -3,10 +3,9 @@ import React, { useContext, useEffect } from 'react'
 
 const DEFAULT_OPTIONS = {
   id: Math.random(),
-  title: 'Uyarı!',
   description: null,
   type: 'success',
-  timeOut: 5000,
+  timeOut: 3500,
   close: null, //<div>close</div>
   icon: null, //<div>icon</div>
   onClick: () => {},

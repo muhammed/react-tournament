@@ -17,9 +17,15 @@ input:focus {
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
 }

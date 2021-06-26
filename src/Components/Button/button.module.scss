@@ -1,16 +1,27 @@
-@import "../../Theme/_variables";
+@import '../../Theme/variables';
 
 .container {
-  background: $primary;
   color: $white;
   border: none;
-  border-radius: 7px;
+  border-radius: 5px;
   min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 25px;
   cursor: pointer;
+  color: $text;
+  font-weight: 500;
+
+  &.primary {
+    background: $primary;
+    color: $white;
+  }
+
+  &.secondary {
+    background: $gray;
+    color: $text;
+  }
 }
 
 .title {

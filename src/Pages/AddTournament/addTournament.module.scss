@@ -1,0 +1,19 @@
+@import '../../Theme/variables';
+
+.form {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  color: $text;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.btn {
+  margin-left: auto;
+}

@@ -5,23 +5,27 @@ import Home from '@/Pages/Home'
 import './Theme/reset.scss'
 import './Theme/global.scss'
 import { ToastrProvider } from '@/Context/ToastrProvider'
+import { GlobalStateProvider } from '@/Context/GlobalStateProvider'
 import ToastrList from '@/Components/ToastrList'
+import { ADD_TOURNAMENT, HOME } from './Constants/routePaths'
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <ToastrProvider>
-          <ToastrList />
-          <Switch>
-            <Route path="/add">
-              <AddTournament />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </ToastrProvider>
+        <GlobalStateProvider>
+          <ToastrProvider>
+            <ToastrList />
+            <Switch>
+              <Route path={ADD_TOURNAMENT}>
+                <AddTournament />
+              </Route>
+              <Route path={HOME}>
+                <Home />
+              </Route>
+            </Switch>
+          </ToastrProvider>
+        </GlobalStateProvider>
       </div>
     </Router>
   )

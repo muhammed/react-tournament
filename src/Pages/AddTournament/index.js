@@ -23,11 +23,10 @@ const AddTournament = () => {
       name: 'muhammmeddddd',
       winnerTeam: 'teamm name',
       image:
-        'https://daory-imgs.s3.us-east-2.amazonaws.com/faca933b-2396-46c9-9c65-6936e72cede3/tnThumbnail%202da%20versi%C3%B3n%20%281%29.jpg'
+        'https://daory-imgs.s3.us-east-2.amazonaws.com/b6c0bb16-6bef-4418-a859-bff3c704ebc9/tnchico.jpg'
     }
   })
   const submit = (data) => {
-    console.log({ data })
     addTournament(data)
     history.push('/')
   }

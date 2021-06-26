@@ -17,7 +17,7 @@ input:focus {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
   padding-right: 15px;
@@ -28,4 +28,20 @@ a,
 a:focus,
 a:hover {
   text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  background: #ddd;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+img {
+  max-width: 100%;
 }

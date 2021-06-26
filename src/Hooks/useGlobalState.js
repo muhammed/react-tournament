@@ -25,8 +25,7 @@ const useGlobalState = () => {
     })
     showToastr({
       description: 'New nominee added to nominees!',
-      type: 'success',
-      timeOut: 450000
+      type: 'success'
     })
   }
 

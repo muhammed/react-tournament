@@ -2,15 +2,13 @@ import { ToastrContext } from '@/Context/ToastrProvider'
 import React, { useContext, useEffect } from 'react'
 
 const DEFAULT_OPTIONS = {
-  id: Math.random(),
   description: null,
   type: 'success',
   timeOut: 3500,
   close: null, //<div>close</div>
   icon: null, //<div>icon</div>
   onClick: () => {},
-  onClose: () => {},
-  hideAutomatically: true
+  onClose: () => {}
 }
 
 const useToastr = () => {
@@ -21,13 +19,10 @@ const useToastr = () => {
       ...options,
       id: Math.random()
     }
-    console.log({ optionsFinal })
     setToastrList([...toastrList, optionsFinal])
-    if (optionsFinal.hideAutomatically) {
-      setTimeout(() => {
-        hideToastr(optionsFinal)
-      }, optionsFinal.timeOut)
-    }
+    setTimeout(() => {
+      hideToastr(optionsFinal)
+    }, optionsFinal.timeOut)
   }
 
   const hideToastr = (toastr) => {

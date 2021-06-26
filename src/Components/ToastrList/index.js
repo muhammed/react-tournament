@@ -14,8 +14,14 @@ const ToastrList = (props) => {
           type={toastr.type}
           onClick={() => hideToastr(toastr)}>
           <div className={styles.content}>
-            {toastr.title && <div className={styles.title}>{toastr.title}</div>}
-            <div className={styles.desc}>{toastr.description}</div>
+            {toastr.title && (
+              <div
+                className={styles.title}
+                dangerouslySetInnerHTML={{ __html: toastr.title }}></div>
+            )}
+            <div
+              className={styles.desc}
+              dangerouslySetInnerHTML={{ __html: toastr.description }}></div>
           </div>
         </div>
       ))}

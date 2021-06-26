@@ -23,6 +23,7 @@ const useToastr = () => {
     setTimeout(() => {
       hideToastr(optionsFinal)
     }, optionsFinal.timeOut)
+    clearTimeout()
   }
 
   const hideToastr = (toastr) => {

@@ -6,7 +6,7 @@ import './Theme/reset.scss'
 import './Theme/global.scss'
 import { ToastrProvider } from '@/Context/ToastrProvider'
 import { GlobalStateProvider } from '@/Context/GlobalStateProvider'
-import ToastrList from '@/Components/ToastrList'
+import { DialogProvider } from '@/Context/DialogProvider'
 import { ADD_TOURNAMENT, HOME } from './Constants/routePaths'
 
 function App() {
@@ -15,15 +15,16 @@ function App() {
       <div className="App">
         <GlobalStateProvider>
           <ToastrProvider>
-            <ToastrList />
-            <Switch>
-              <Route path={ADD_TOURNAMENT}>
-                <AddTournament />
-              </Route>
-              <Route path={HOME}>
-                <Home />
-              </Route>
-            </Switch>
+            <DialogProvider>
+              <Switch>
+                <Route path={ADD_TOURNAMENT}>
+                  <AddTournament />
+                </Route>
+                <Route path={HOME}>
+                  <Home />
+                </Route>
+              </Switch>
+            </DialogProvider>
           </ToastrProvider>
         </GlobalStateProvider>
       </div>

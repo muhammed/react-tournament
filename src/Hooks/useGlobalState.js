@@ -2,10 +2,12 @@ import { TOURNAMENTS } from '@/Constants/storage'
 import { GlobalStateContext } from '@/Context/GlobalStateProvider'
 import React, { useCallback, useContext, useEffect } from 'react'
 import useToastr from '@/Hooks/useToastr'
+import useDialog from '@/Hooks/useDialog'
 
 const useGlobalState = () => {
   const { tournaments, setTournaments } = useContext(GlobalStateContext)
   const { showToastr } = useToastr()
+  const { showDialog, hideDialog } = useDialog()
 
   useEffect(() => {
     initTournaments()
@@ -30,10 +32,30 @@ const useGlobalState = () => {
   }
 
   const deleteTournament = (item) => {
+    showDialog({
+      title: 'Remove Nominee',
+      description: `Do you want to remove ${item.name} from nominees?`,
+      buttonApply: {
+        title: 'OK',
+        onPress: () => deleteTournamentConfirm(item)
+      },
+      buttonCancel: {
+        title: 'CANCEL',
+        onPress: () => hideDialog()
+      }
+    })
+  }
+
+  const deleteTournamentConfirm = (item) => {
     setTournaments((prev) => {
       const filtered = prev.filter((tournament) => tournament.id !== item.id)
       saveTournaments(filtered)
       return filtered
+    })
+    hideDialog()
+    showToastr({
+      description: `<b>${item.name}</b> removed from nominees`,
+      type: 'success'
     })
   }
 

@@ -1,7 +1,12 @@
+import Layout from '@/Components/Layout'
 import React from 'react'
 
 const AddTournament = () => {
-  return <div>add tournament</div>
+  return (
+    <Layout>
+      <div>add tournament</div>
+    </Layout>
+  )
 }
 
 export default AddTournament

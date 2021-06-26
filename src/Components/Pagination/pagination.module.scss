@@ -1,0 +1,29 @@
+@import '../../Theme/variables';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  min-width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 5px 7px;
+  background: $gray;
+  border: 1px solid $border;
+  color: $text;
+  margin: 0 8px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 600;
+
+  &.active {
+    background: $primary;
+    border-color: $primary;
+    color: $white;
+    transform: scale(1.2)
+  }
+}

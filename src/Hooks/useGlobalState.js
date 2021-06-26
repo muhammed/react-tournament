@@ -29,6 +29,14 @@ const useGlobalState = () => {
     })
   }
 
+  const deleteTournament = (item) => {
+    setTournaments((prev) => {
+      const filtered = prev.filter((tournament) => tournament.id !== item.id)
+      saveTournaments(filtered)
+      return filtered
+    })
+  }
+
   const initTournaments = () => {
     const tournamentsTemp = localStorage.getItem(TOURNAMENTS)
     if (tournamentsTemp) {
@@ -40,7 +48,7 @@ const useGlobalState = () => {
     localStorage.setItem(TOURNAMENTS, JSON.stringify(data))
   }
 
-  return { tournaments, addTournament, initTournaments }
+  return { tournaments, addTournament, initTournaments, deleteTournament }
 }
 
 export default useGlobalState

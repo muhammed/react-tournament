@@ -1,7 +1,9 @@
 import React from 'react'
+import useGlobalState from '@/Hooks/useGlobalState'
 import styles from './tournamentItem.module.scss'
 
 const TournamentItem = ({ item }) => {
+  const { deleteTournament } = useGlobalState()
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -30,7 +32,9 @@ const TournamentItem = ({ item }) => {
             <button className={styles.button}>DOWN</button>
             <button className={styles.button}>UP</button>
           </div>
-          <button className={styles.delete}>DELETE</button>
+          <button className={styles.delete} onClick={() => deleteTournament(item)}>
+            DELETE
+          </button>
         </div>
       </div>
     </div>

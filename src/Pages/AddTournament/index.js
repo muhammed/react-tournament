@@ -18,14 +18,7 @@ const AddTournament = () => {
     setError,
     handleSubmit,
     setValue
-  } = useForm({
-    defaultValues: {
-      name: 'muhammmeddddd',
-      winnerTeam: 'teamm name',
-      image:
-        'https://daory-imgs.s3.us-east-2.amazonaws.com/b6c0bb16-6bef-4418-a859-bff3c704ebc9/tnchico.jpg'
-    }
-  })
+  } = useForm()
   const submit = (data) => {
     addTournament(data)
     history.push('/')

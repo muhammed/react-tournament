@@ -24,7 +24,7 @@ const TournamentItem = ({ item }) => {
           <div className={styles.info}>
             <div className={styles.infoTitle}>Last Vote Date:</div>
             <div className={styles.infoText}>
-              {dayjs(item.updatedAt).format('DD.MM.YYYY hh:mm')}
+              {dayjs(item.updatedAt).format('DD.MM.YYYY HH:mm')}
             </div>
           </div>
         ) : (

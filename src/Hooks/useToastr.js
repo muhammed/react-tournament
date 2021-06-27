@@ -4,31 +4,35 @@ import React, { useContext, useEffect } from 'react'
 const DEFAULT_OPTIONS = {
   description: null,
   type: 'success',
-  timeOut: 3500,
-  close: null, //<div>close</div>
-  icon: null, //<div>icon</div>
+  timeOut: 5000,
   onClick: () => {},
   onClose: () => {}
 }
 
+var timeOut = null
+
 const useToastr = () => {
   const { toastrList, setToastrList } = useContext(ToastrContext)
   const showToastr = (options) => {
+    setToastrList([])
     const optionsFinal = {
       ...DEFAULT_OPTIONS,
       ...options,
       id: Math.random()
     }
-    setToastrList([...toastrList, optionsFinal])
-    setTimeout(() => {
-      hideToastr(optionsFinal)
-    }, optionsFinal.timeOut)
-    clearTimeout()
+    setToastrList([optionsFinal])
+    if (timeOut) {
+      timeOut = null
+      clearTimeout(timeOut)
+    } else {
+      timeOut = setTimeout(() => {
+        hideToastr()
+      }, optionsFinal.timeOut)
+    }
   }
 
   const hideToastr = (toastr) => {
-    const tempList = toastrList.filter((item) => item.id !== toastr.id)
-    setToastrList(tempList)
+    setToastrList([])
   }
 
   return { toastrList, showToastr, hideToastr }

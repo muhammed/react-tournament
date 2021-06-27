@@ -66,11 +66,38 @@ const useGlobalState = () => {
     }
   }
 
+  const upVote = (item) => {
+    const tempList = [...tournaments]
+    const findItem = tempList.find((el) => el.id === item.id)
+    if (findItem) {
+      findItem.points += 1
+      findItem.updatedAt = new Date().getTime()
+    }
+    setTournaments(tempList)
+  }
+
+  const downVote = (item) => {
+    const tempList = [...tournaments]
+    const findItem = tempList.find((el) => el.id === item.id)
+    if (findItem) {
+      findItem.points = findItem.points - 1 < 0 ? 0 : findItem.points - 1
+      findItem.updatedAt = new Date().getTime()
+    }
+    setTournaments(tempList)
+  }
+
   const saveTournaments = (data) => {
     localStorage.setItem(TOURNAMENTS, JSON.stringify(data))
   }
 
-  return { tournaments, addTournament, initTournaments, deleteTournament }
+  return {
+    tournaments,
+    addTournament,
+    initTournaments,
+    deleteTournament,
+    upVote,
+    downVote
+  }
 }
 
 export default useGlobalState

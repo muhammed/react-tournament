@@ -1,9 +1,10 @@
 import React from 'react'
 import useGlobalState from '@/Hooks/useGlobalState'
 import styles from './tournamentItem.module.scss'
+import dayjs from 'dayjs'
 
 const TournamentItem = ({ item }) => {
-  const { deleteTournament } = useGlobalState()
+  const { deleteTournament, upVote, downVote } = useGlobalState()
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -22,15 +23,21 @@ const TournamentItem = ({ item }) => {
         {item.points > 0 ? (
           <div className={styles.info}>
             <div className={styles.infoTitle}>Last Vote Date:</div>
-            <div className={styles.infoText}>{item.winnerTeam}</div>
+            <div className={styles.infoText}>
+              {dayjs(item.updatedAt).format('DD.MM.YYYY hh:mm')}
+            </div>
           </div>
         ) : (
           <div className={styles.infoText}>Not voted yet</div>
         )}
         <div className={styles.footer}>
           <div className={styles.buttons}>
-            <button className={styles.button}>DOWN</button>
-            <button className={styles.button}>UP</button>
+            <button className={styles.button} onClick={() => downVote(item)}>
+              DOWN
+            </button>
+            <button className={styles.button} onClick={() => upVote(item)}>
+              UP
+            </button>
           </div>
           <button className={styles.delete} onClick={() => deleteTournament(item)}>
             DELETE

@@ -6,6 +6,20 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 20px 20px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: none;
+  }
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 576px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+  }
 }
 
 .pagination {
@@ -20,18 +34,26 @@
 
 .title {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 45px;
   margin-bottom: 25px;
   color: $text;
   font-size: 24px;
   font-weight: 400;
+  line-height: 1.5em;
+
+  @media (max-width: 576px) {
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
 }
 
 .empty {
   color: $text;
-  opacity: .8;
+  opacity: 0.8;
   font-size: 21px;
   font-weight: 700;
   margin-top: 75px;
   text-align: center;
+  line-height: 1.5em;
 }

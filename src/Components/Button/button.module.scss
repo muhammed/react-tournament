@@ -13,6 +13,10 @@
   color: $text;
   font-weight: 500;
 
+  @media (max-width: 576px) {
+    padding: 10px 20px;
+  }
+
   &.primary {
     background: $primary;
     color: $white;
@@ -26,4 +30,8 @@
 
 .title {
   font-size: 16px;
+
+  @media (max-width: 576px) {
+    font-size: 14px;
+  }
 }

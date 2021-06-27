@@ -113,7 +113,10 @@ const Home = () => {
           <div className={styles.pagination}>
             <Pagination
               items={sortedTournaments}
-              onPageChange={(page) => setCurrentPage(page)}
+              onPageChange={(page) => {
+                setCurrentPage(page)
+                window.scrollTo(0, 0)
+              }}
               currentPage={currentPage}
             />
           </div>

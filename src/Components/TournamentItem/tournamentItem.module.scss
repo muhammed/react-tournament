@@ -3,7 +3,7 @@
 $radius: 5px;
 
 .container {
-  max-width: 300px;
+  max-width: 450px;
   background: #e2edf1;
   border-radius: $radius;
   transition: all 0.3s ease;
@@ -121,4 +121,9 @@ $radius: 5px;
   transform: scale(0.75);
   transition: all 0.3s ease;
   will-change: transform, opacity;
+
+  @media (max-width: 768px) {
+    opacity: 1;
+    transform: none;
+  }
 }

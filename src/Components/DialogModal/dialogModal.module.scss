@@ -1,8 +1,9 @@
 @import '../../Theme/variables';
 
 .modal {
-  max-width: 400px;
+  width: 400px;
   max-height: 350px;
+  max-width: 90%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -70%);
@@ -15,6 +16,10 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 576px) {
+    max-height: 250px;
+  }
 }
 
 .head {

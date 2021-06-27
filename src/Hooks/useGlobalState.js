@@ -74,6 +74,7 @@ const useGlobalState = () => {
       findItem.updatedAt = new Date().getTime()
     }
     setTournaments(tempList)
+    saveTournaments(tempList)
   }
 
   const downVote = (item) => {
@@ -84,6 +85,7 @@ const useGlobalState = () => {
       findItem.updatedAt = new Date().getTime()
     }
     setTournaments(tempList)
+    saveTournaments(tempList)
   }
 
   const saveTournaments = (data) => {

@@ -4,9 +4,34 @@
   margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 20px 20px;
 }
 
 .pagination {
   margin-top: 55px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: $text;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.empty {
+  color: $text;
+  opacity: .8;
+  font-size: 21px;
+  font-weight: 700;
+  margin-top: 75px;
+  text-align: center;
 }
